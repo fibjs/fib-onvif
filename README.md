@@ -1,16 +1,14 @@
-# ONVIF
+# FIB-ONVIF
 
-[![Build Status](https://travis-ci.org/agsh/onvif.png)](https://travis-ci.org/agsh/onvif)
-[![Coverage Status](https://img.shields.io/coveralls/agsh/onvif.svg)](https://coveralls.io/r/agsh/onvif?branch=master)
-[![NPM version](https://img.shields.io/npm/v/onvif.svg)](https://www.npmjs.com/package/onvif)
+[![NPM version](https://img.shields.io/npm/v/fib-onvif.svg)](https://www.npmjs.com/package/fib-onvif)
 
-ONVIF Client protocol Profile S (Live Streaming) and Profile G (Replay) Node.js implementation.
+ONVIF Client protocol Profile S (Live Streaming) and Profile G (Replay) FIBJS implementation.
 
 This is a wrapper to ONVIF protocol which allows you to get information about your NVT (network video transmitter)
 device, its media sources, control PTZ (pan-tilt-zoom) movements and manage presets, detect devices in your network and control its events.
 It will also allow you to get information about your NVR (network video recorder) Profile G device and obtain a list of recordings.
 
-The library uses NodeJS.
+The library uses FIBJS.
 
 [![ONVIF](http://www.onvif.org/Portals/_default/Skins/onvif/images/logo-new.jpg)](http://onvif.org)
 
@@ -18,22 +16,14 @@ The library uses NodeJS.
 
 ### NPM
 
-`npm install onvif` - install latest stable version
-
-`npm install agsh/onvif` - install latest version from GitHub
-
-`npm install agsh/onvif#dev` - install latest development version
+`fibjs --install fib-onvif` or `npm install fib-onvif` - install latest stable version
 
 ### Clone the latest version from github
-`git clone https://github.com/agsh/onvif.git`
+`git clone https://github.com/fibjs/fib-onvif.git`
 
 ### Tests
-In the library directory run `npm test`
 
-By default the tests use a mockup server to generate ONVIF replies.
-
-To test with the real device, set appropriate environment variables `HOSTNAME`, `USERNAME`, `PASSWORD`, `PORT` and run
-tests.
+TODO
 
 ### Documentation
 To build jsdoc for the library with default theme run `npm run jsdoc`. Otherwise use `jsdoc` with sources from
@@ -74,14 +64,8 @@ For Profile G Recorders it displays the RTSP address of the first recording
 
 
 ## Troubleshooting
-Different cameras have different ONVIF implementation. I've tested this module only with a couple of devices. So if you got different problems with this library, please let me know via e-mail. Else please just send the model of your
-camera to me.
 
-# API
-
-This page and API class documentation you can found here: [http://agsh.github.io/onvif/](http://agsh.github.io/onvif/)
-
-Short description of library possibilities is below.
+https://github.com/fibjs/fib-onvif/issues
 
 ## Discovery
 Since 0.2.7 version library supports WS-Discovery of NVT devices. Currently it uses only `Probe` SOAP method that just works well.
@@ -90,7 +74,7 @@ Discovery is an EventEmitter inheritor, so you can wait until discovery timeout,
 Here some examples:
 
 ```js
-var onvif = require('onvif');
+var onvif = require('fib-onvif');
 onvif.Discovery.on('device', function(cam){
 // function will be called as soon as NVT responses
 	cam.username = <USERNAME>;
@@ -101,7 +85,7 @@ onvif.Discovery.probe();
 ```
 
 ```js
-var onvif = require('onvif');
+var onvif = require('fib-onvif');
 onvif.Discovery.probe(function(err, cams) {
 // function will be called only after timeout (5 sec by default)
 	if (err) { throw err; }
@@ -131,7 +115,7 @@ Options
 ## Cam class
 
 ```javascript
-var Cam = require('onvif').Cam;
+var Cam = require('fib-onvif').Cam;
 ```
 
 ## new Cam(options, callback)

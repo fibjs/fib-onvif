@@ -1,69 +1,44 @@
 {
-  "name": "onvif",
-  "version": "0.6.4",
-  "author": "Andrew D.Laptev <a.d.laptev@gmail.com>",
-  "description": "Client to ONVIF NVT devices Profile S: cameras",
+  "name": "fib-onvif",
+  "version": "0.1.0",
+  "author": "luoyhang003 <luoyhang003@hotmail.com>",
+  "description": "An onvif lib for FIBJS.",
   "main": "lib/onvif.js",
   "scripts": {
     "jsdoc": "jsdoc ./lib/*.js --readme ./README.md --destination ./docs",
     "gh-pages": "jsdoc ./lib/*.js --readme ./README.md --destination ./",
     "lint": "eslint lib/*.js",
-    "coffee-tests": "coffee -c ./test",
-    "pretest": "npm run lint && npm run coffee-tests",
-    "test": "nyc mocha",
-    "test-js": "mocha 'test/**/*.test.js'",
-    "test-on-travis": "nyc npm test && nyc report --reporter=text-lcov | coveralls"
   },
   "contributors": [
     {
-      "name": "Andrew D.Laptev",
-      "email": "a.d.laptev@gmail.com",
-      "url": "https://github.com/agsh/onvif"
-    },
-    {
-      "name": "Chris Wiggins",
-      "email": "chris@wiggins.nz",
-      "url": "https://github.com/chriswiggins"
-    },
-    {
-      "name": "Jeff Galbraith",
-      "email": "jgalbraith@intelliviewtech.com",
-      "url": "http://intelliviewtech.com"
-    },
-    {
-      "name": "Roger Hardiman",
-      "email": "opensource@rjh.org.uk",
-      "url": "http://www.rjh.org.uk"
+      "name": "luoyhang003",
+      "email": "yuanahng.luo@hotmail.com",
+      "url": "https://github.com/fibjs/fib-onvif"
     }
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/agsh/onvif.git"
+    "url": "https://github.com/fibjs/fib-onvif.git"
   },
   "dependencies": {
     "lodash.get": "^4.4.2",
+    "proxy-agent": "^4.0.1",
     "xml2js": "^0.4.19"
   },
   "keywords": [
     "onvif",
     "video",
-    "PTZ",
-    "camera",
-    "RTSP"
+    "fibjs"
   ],
   "license": "MIT",
   "engines": {
-    "node": ">=6.0"
+    "FIBJS": ">=0.33.0"
   },
   "devDependencies": {
-    "coffeescript": "^1.9.3",
-    "coveralls": "^3.0.2",
     "dot": "^1.0.3",
     "eslint": "^5.5.0",
     "eslint-plugin-node": "^7.0.1",
     "keypress": "^0.2.1",
-    "mocha": "^2.1.0",
-    "mocha-lcov-reporter": "0.0.1",
     "nimble": "^0.0.2",
     "nyc": "^14.1.1",
     "ip": "^1.1.5"
