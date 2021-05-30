@@ -1,6 +1,6 @@
 {
   "name": "fib-onvif",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "author": "luoyhang003 <luoyhang003@hotmail.com>",
   "description": "An onvif lib for FIBJS.",
   "main": "lib/onvif.js",
